@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block appcontent %}
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div class="flex-container wrapper">
+    <h5>{% block header %}{% endblock %}</h5>
+    <hr/>
+    <a class="tabNav" href="{% url 'movieHome' %}">Home</a>
+    <a class="tabNav" href="{% url 'listMovie' %}">Your Movies</a>
+    <a class="tabNav" href="{% url 'findMovie' %}">Find Movies</a>
+</div>
+<div class="flex-container wrapper">
+    {% block content %}{% endblock %}
+</div>
+</body>
+{% endblock %}

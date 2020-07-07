@@ -1,0 +1,40 @@
+{% extends 'MovieApp/movie_base.html' %}
+{% load staticfiles %}
+
+{% block title %}Your Movies{% endblock %}
+
+{% block header %}Your Movies{% endblock %}
+
+{% block content %}
+<section>
+    <div class="flex-container" id="jerseyCollectionPage">
+        <table class="table-striped">
+            <tr>
+                <th class="col-md">Title</th>
+                <th class="col-md">Director</th>
+                <th class="col-md">Studio</th>
+                <th class="col-md">Platform</th>
+                <th class="col-md">Year</th>
+            </tr>
+            {% for movie in movies %}
+            <tr>
+                <td class="col-md">{{movie.title}}</td>
+                <td class="col-md">{{movie.director}}</td>
+                <td class="col-md">{{movie.studio}}</td>
+                <td class="col-md">{{movie.platform}}</td>
+                <td class="col-md">{{movie.year}}</td>
+                <td class="col-md"><a href="{{movie.pk}}/Details">
+                    <button class="primary-light-button">Details</button>
+                </a></td>
+                <td class="col-md"><a href="{{movie.pk}}/Edit">
+                    <button class="primary-light-button">Edit</button>
+                </a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <button class="primary-bright-button" type="button" onclick=" location.href='{% url 'createMovie' %}'">
+            Add a Movie
+        </button>
+    </div>
+</section>
+{% endblock %}

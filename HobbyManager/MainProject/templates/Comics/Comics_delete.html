@@ -1,0 +1,14 @@
+{% extends 'Comics/Comics_base.html' %}
+{% load staticfiles %}
+{% block templatecontent %}
+
+<div class="flex-container">
+    <form action="." method="POST">{% csrf_token %}
+        <h1>Do you want to delete "{{ books.title }}?"</h1>
+        <button class="primary-bright-button" type="submit">Delete</button>
+        <button class="primary-bright-button" type="button" onclick=" location.href='{% url 'listComics' %}'">Cancel
+        </button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "MovieApp/movie_base.html" %}
+{% load static from staticfiles %}
+
+{% block title %}Find Movies{% endblock %}
+
+{% block header %}Find a Movie{% endblock %}
+
+{% block content %}
+ <div class="flex-container">
+     <form method="post">
+         {% csrf_token %}
+         <label>Title:</label>
+         <input type="text" name="title" value="">
+         <label>Year:</label>
+         <input type="text" name="year" value="">
+         <label>Format:</label>
+         <select name="mov_format" id="mov_format">
+         <option value="movie">movie</option>
+         <option value="series">series</option>
+         <option value="episode">episode</option>
+         </select>
+         <hr/>
+         <div class="row">
+             <div class="col-md-12">
+                <button name="search" type="submit" class="primary-bright-button">Submit</button>
+             </div>
+        </div>
+     </form>
+ </div>
+    {{error}}
+    {% for film in movies %}
+<div class="flex-container wrapper">
+     <p class="row">
+             <p class="col-md-12">
+                {{film.Title}}
+             </p>
+            <p class="col-md-12">
+                {{film.Year}}
+             </p>
+            <p class="col-md-12">
+                {{film.Format}}
+             </p>
+            <p class="col-md-12">
+              {% if film.Poster != "N/A" %} <img src="{{film.Poster}}"></img>
+                {% endif %}
+             </p>
+     </p>
+</div>
+    {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'PopularCharts/charts_base.html' %}
+{% load staticfiles %}
+{% block templatecontent %}
+<section>
+    <div class="flex-container" id="jerseyCollectionPage">
+        <table class="table-striped">
+            <tr>
+                <th class="col-md">Version</th>
+                <th class="col-md">Level</th>
+                <th class="col-md">Song</th>
+                <th class="col-md">Artist</th>
+                <th class="col-md">Tab by</th>
+                <th class="col-md">Tuning</th>
+                <th class="col-md">Original Key</th>
+                <th class="col-md">Transposed Key</th>
+                <th class="col-md">Capo</th>
+
+            </tr>
+            {% for song in Song %}     <!-- creates a new row for each song in the collection -->
+            <tr>
+                <td class="col-md">{{song.version}}</td>
+                <td class="col-md">{{song.level}}</td>
+                <td class="col-md">{{song.song}}</td>
+                <td class="col-md">{{song.artist}}</td>
+                <td class="col-md">{{song.tab_by}}</td>
+                <td class="col-md">{{song.tuning}}</td>
+                <td class="col-md">{{song.original_key}}</td>
+                <td class="col-md">{{song.transposed_key}}</td>
+                <td class="col-md">{{song.guitar_capo}}</td>
+
+
+
+                <td class="col-md">
+                    {% if song.authentic %} &#8730 {% endif %}
+                </td>
+                <td class="col-md"><a href="{{song.pk}}/details">
+                    <button class="primary-light-button">Details</button>
+                </a></td>    <!-- creates a link for that specific song -->
+            </tr>
+            {% endfor %}
+        </table>
+        <button class="primary-bright-button" type="button" onclick=" location.href='{% url 'song_add' %}'">Add Song
+        </button>
+    </div>
+</section>
+{% endblock %}

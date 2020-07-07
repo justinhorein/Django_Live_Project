@@ -1,0 +1,61 @@
+{% extends 'MovieApp/movie_base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}Edit{% endblock %}
+
+{% block header %}Edit{% endblock %}
+
+{% block content %}
+<section>
+    <div class="flex-container footy">
+        <form action="" method="post" autocomplete="off">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6">
+                    {{form.title|as_crispy_field}}
+                </div>
+                <div class="col-md-6">
+                    {{form.director|as_crispy_field}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    {{form.studio|as_crispy_field}}
+                </div>
+                <div class="col-md-4">
+                    {{form.platform|as_crispy_field}}
+                </div>
+                <div class="col-md-4">
+                    {{form.year|as_crispy_field}}
+                </div>
+            </div>
+            <hr/><hr/>
+            <div class="row">
+                <div class="col-md-12">
+                    <button name="submit" type="submit" formmethod="post" class="primary-bright-button">Submit</button>
+                </div>
+            </div>
+            <hr/><hr/>
+            <div class="row">
+                <div class="col-md-12">
+                    <a class="confirm-delete">
+                        <button name="delete" type="submit" formmethod="post" class="primary-bright-button">Delete</button>
+                    </a>
+                </div>
+            </div>
+            </form>
+            <hr/><hr/>
+            <div class="flex-container footy">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="primary-bright-button" type="button" onclick=" location.href='{% url 'listMovie' %}'">
+                            Back to Collection
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+{% endblock %}

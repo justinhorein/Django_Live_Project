@@ -1,0 +1,47 @@
+{% extends 'BasicApp/BasicApp_base.html' %}
+{% load staticfiles %}
+{% block templatecontent %}
+<section>
+    <div class="flex-container footy">
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>{{TravelList.Name}}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{TravelList.Email}}</td>
+            </tr>
+            <tr>
+                <th>Destination Location</th>
+                <td>{{TravelList.DestinationLocation}}</td>
+            </tr>
+            <tr>
+                <th>Source Location</th>
+                <td>{{TravelList.SourceLocation}}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{TravelList.Image}}</td>
+            </tr>
+            <tr>
+                <th>Trip Start Date</th>
+                <td>{{TravelList.TripStartDate}}</td>
+            </tr>
+            <tr>
+                <th>Accommodation</th>
+                <td>{{TravelList.Accommodation}}</td>
+            </tr>
+            <tr>
+                <th>Trip Cost</th>
+                <td>{{TravelList.TripCost}}</td>
+            </tr>
+
+        </table>
+
+        <hr/>
+        <button class="primary-bright-button" type="button" onclick=" location.href='{% url 'travelLists' %}'">Back to List
+        </button>
+    </div>
+</section>
+{% endblock %}

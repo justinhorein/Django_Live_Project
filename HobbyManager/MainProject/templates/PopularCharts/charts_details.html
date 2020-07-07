@@ -1,0 +1,51 @@
+{% extends 'PopularCharts/charts_base.html' %}
+{% load staticfiles %}
+{% block templatecontent %}
+<section>
+    <div class="flex-container footy">
+        <table>
+            <tr>
+                <th>Version</th>
+                <td>{{song.version}}</td>
+            </tr>
+            <tr>
+                <th>Level</th>
+                <td>{{song.level}}</td>
+            </tr>
+            <tr>
+                <th>Artist</th>
+                <td>{{song.artist}}</td>
+            </tr>
+            <tr>
+                <th>Tab by</th>
+                <td>{{song.tab_by}}</td>
+            </tr>
+            <tr>
+                <th>Year</th>
+                <td>{{jersey.year}}</td>
+            </tr>
+            <tr>
+                <th>Tuning</th>
+                <td>{{song.tunning}}</td>
+            </tr>
+            <tr>
+                <th>Original Key</th>
+                <td>{{song.original_key}}</td>
+            </tr>
+            <tr>
+                <th>Transposed Key</th>
+                <td>{{song.transposed_key}}</td>
+            </tr>
+            <tr>
+                <th>Capo</th>
+                <td>{{song.guitar_capo}}</td>
+            </tr>
+        </table>
+
+        <hr/>
+        <button class="primary-bright-button" type="button" onclick=" location.href='{% url 'song_index' %}'">Back to
+            Songs
+        </button>
+    </div>
+</section>
+{% endblock %}
