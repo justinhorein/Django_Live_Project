@@ -6,14 +6,26 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-<div class="flex-container wrapper">
-    <h5>{% block header %}{% endblock %}</h5>
+<div class="">
+    <h1 class="text-center">{% block header %}{% endblock %}</h1>
     <hr/>
-    <a class="tabNav" href="{% url 'movieHome' %}">Home</a>
-    <a class="tabNav" href="{% url 'listMovie' %}">Your Movies</a>
-    <a class="tabNav" href="{% url 'findMovie' %}">Find Movies</a>
+    <nav class="navbar navbar-expand navbar-light">
+        
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'movieHome' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'listMovie' %}">Your Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'findMovie' %}">Find Movies</a>
+                </li>
+            </ul>
+        
+    </nav>
 </div>
-<div class="flex-container wrapper">
+<div class="container">
     {% block content %}{% endblock %}
 </div>
 </body>
