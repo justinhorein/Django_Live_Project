@@ -17,17 +17,34 @@
 
 
     <!-- Internal CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static './css/styles.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static './css/bootstrap.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static './css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static './css/styles.css' %}">
 
 </head>
-<body>
-<section>
-    <div class="container mt-5">
-        {% block appcontent %}{% endblock %}
+<body class="container" id="backdrop">
+    <div class="">
+        <h1 class="text-center mt-3">{% block header %}{% endblock %}</h1>
+        <hr/>
+        <nav class="navbar navbar-expand">
+            
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'movieHome' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'listMovie' %}">Your Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'findMovie' %}">Find Movies</a>
+                    </li>
+                </ul>
+            
+        </nav>
     </div>
-</section>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
 
 <!-- Optional JavaScript -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

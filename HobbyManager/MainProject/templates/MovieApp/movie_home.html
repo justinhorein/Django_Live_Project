@@ -1,4 +1,4 @@
-{% extends "MovieApp/movie_base.html" %}
+{% extends "base.html" %}
 {% load static from staticfiles %}
 
 {% block title %}Home{% endblock %}
@@ -6,15 +6,15 @@
 {% block header %}Movie Fandome App!{% endblock %}
 
 {% block content %}
-<div class="">
+<div>
     
-        <img src="{% static 'images/spirited-away.png' %}">
-    <div class="container text-center">
-        <p class=""><h5>All your Movies in one place.</h5><br/>
+        <img class="" src="{% static 'images/spirited-away.png' %}">
+    <div class="text-center mt-4">
+        <h5>All your Movies in one place.</h5>
+        <p class="mt-4">       
             This app allows you to keep track of titles you already have and search for ones you are curious about.
         </p>
     </div>
-        <br/>
 </div>
 {% endblock %}
 
