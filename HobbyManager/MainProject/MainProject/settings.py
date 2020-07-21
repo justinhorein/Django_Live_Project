@@ -35,11 +35,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'PopularCharts',
-    'FootyDemo',
-    'BasicApp',
-    'Comics',
-    'CraftBeer',
     'MovieApp',
     'crispy_forms',
 ]
