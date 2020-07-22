@@ -7,3 +7,10 @@
 .text-light {
     color: rgb(221, 216, 216);
 }
+
+.table-format {
+    color: black;
+    background-color: rgb(226, 226, 226); 
+    border: 1px solid black;
+    box-shadow: 3px 2px 20px black, 1px 1px 8px black inset;
+  }
