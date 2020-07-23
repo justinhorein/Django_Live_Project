@@ -13,5 +13,8 @@ class MovieForm(ModelForm):
             'platform':'Platform',
             'year':'Year',
         }
+        # widgets = {
+        #     'myfield': forms.TextInput(attrs={'class': 'myfieldclass'}),
+        # }
 
 
