@@ -29,16 +29,16 @@
                     <td>{{movie.platform}}</td>
                     <td>{{movie.year}}</td>
                     <td><a href="{{movie.pk}}/Details">
-                        <button class="primary-light-button">Details</button>
+                        <button class="btn-secondary">Details</button>
                     </a></td>
                     <td><a href="{{movie.pk}}/Edit">
-                        <button class="primary-light-button">Edit</button>
+                        <button class="btn-danger">Edit</button>
                     </a></td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
-        <button class="primary-light-button mt-2" type="button" onclick=" location.href='{% url 'createMovie' %}'">
+        <button class="btn-primary mt-2" type="button" onclick=" location.href='{% url 'createMovie' %}'">
             Add a Movie
         </button>
     </div>

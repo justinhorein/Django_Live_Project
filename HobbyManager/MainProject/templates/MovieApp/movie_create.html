@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static from staticfiles %}
+{% load crispy_forms_tags %}
 
 {% block title %}Collection Form{% endblock %}
 
@@ -7,19 +8,31 @@
 
 {% block content %}
     <div class="table-style col-10 ml-auto mr-auto mt-4">
-        <h4 class="mt-3 underline">Movie Form</h4>
+        <h4 class="m-4 underline">Movie Form</h4>
         <form method="post">
             {% csrf_token %}
             
-                <table class="">
-                    {{ form.as_table }} <!-- this only renders the td tags, still need the table tags -->
-                </table>
+                <div class="col-10 m-auto">
+                    {{ form.title|as_crispy_field }} <!-- this only renders the td tags, still need the table tags -->
+                </div>
+                <div class="col-10 m-auto">
+                    {{ form.director|as_crispy_field }} <!-- this only renders the td tags, still need the table tags -->
+                </div>
+                <div class="col-10 m-auto">
+                    {{ form.studio|as_crispy_field }} <!-- this only renders the td tags, still need the table tags -->
+                </div>
+                <div class="col-10 m-auto">
+                    {{ form.platform|as_crispy_field }} <!-- this only renders the td tags, still need the table tags -->
+                </div>
+                <div class="col-10 m-auto">
+                    {{ form.year|as_crispy_field }} <!-- this only renders the td tags, still need the table tags -->
+                </div>
                 {{ form.non_field_errors }}
             
-            <button class="primary-bright-button mt-4 mb-2" type="submit"> Add to Collection</button>
+            <button class="btn-success mt-4 mb-2" type="submit"> Add to Collection</button>
         </form>
         
-        <button class="primary-bright-button m-3" type="button" onclick="location.href='{% url 'listMovie' %}'">Back to
+        <button class="btn-secondary mt-3 mb-4" type="button" onclick="location.href='{% url 'listMovie' %}'">Back to
             Collection
         </button>
     </div>
