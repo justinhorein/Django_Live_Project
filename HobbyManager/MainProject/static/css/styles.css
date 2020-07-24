@@ -28,3 +28,8 @@ table {
   .center {
       margin: auto;
   }
+
+
+ .align-left {
+     text-align: left;
+ }

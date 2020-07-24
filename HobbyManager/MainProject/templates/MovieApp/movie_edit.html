@@ -8,9 +8,10 @@
 
 {% block content %}
 <section>
-    <div class="flex-container footy">
+    <div class="container table-style pt-2">
         <form action="" method="post" autocomplete="off">
             {% csrf_token %}
+            <h3 class="m-3">Movie</h3>
             <div class="row">
                 <div class="col-md-6">
                     {{form.title|as_crispy_field}}
@@ -31,31 +32,32 @@
                     {{form.year|as_crispy_field}}
                 </div>
             </div>
-            <hr/><hr/>
-            <div class="row">
-                <div class="col-md-12">
-                    <button name="submit" type="submit" formmethod="post" class="primary-bright-button">Submit</button>
-                </div>
-            </div>
-            <hr/><hr/>
-            <div class="row">
-                <div class="col-md-12">
-                    <a class="confirm-delete">
-                        <button name="delete" type="submit" formmethod="post" class="primary-bright-button">Delete</button>
-                    </a>
-                </div>
-            </div>
-            </form>
-            <hr/><hr/>
-            <div class="flex-container footy">
-                <div class="row">
-                    <div class="col-md-12">
-                        <button class="primary-bright-button" type="button" onclick=" location.href='{% url 'listMovie' %}'">
-                            Back to Collection
-                        </button>
+            
+                <div class="row mt-3 mb-4">
+                    <div class="ml-auto">
+                        <button name="submit" type="submit" formmethod="post" class="btn-success">Submit</button>
                     </div>
+            
+                
+                
+                    <div class="m-auto">
+                        <a class="confirm-delete">
+                            <button name="delete" type="submit" formmethod="post" class="btn-danger">Delete</button>
+                        </a>
+                    </div>
+                
+                </form>
+                
+                
+                    
+                        <div class="mr-auto">
+                            <button class="btn-secondary" type="button" onclick=" location.href='{% url 'listMovie' %}'">
+                                Back to Collection
+                            </button>
+                        </div>
+                    
                 </div>
-            </div>
+            
     </div>
 </section>
 {% endblock %}
