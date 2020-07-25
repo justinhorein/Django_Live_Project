@@ -21,15 +21,16 @@ table {
       margin-top: 2em;
   }
 
-  .underline {
-      text-decoration: underline;
-  }
-  
-  .center {
-      margin: auto;
-  }
-
-
  .align-left {
      text-align: left;
  }
+
+#card-style {
+    color: black;
+    text-overflow: clip;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+}
+  
