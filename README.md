@@ -4,4 +4,4 @@ Django_Live_Project is a web app I built at the Tech Academy (technically as par
 
 
 # Caveats
-Fortunately, I was able to include the code with this Live Project as well as a written summary (there is only a written summary for C# Live Project). Originally built as part of a bigger application (including many smaller apps).  I have modified this code to include only the app that I wrote.  There might be hints of this in the file structure. 
+Fortunately, I was able to include the code with this Live Project as well as a written summary (there is only a written summary for C# Live Project). I originally built this as part of a larger application (composed of many smaller apps).  I have modified this code to include only the app that I wrote.  There are hints of this in the file structure. 
